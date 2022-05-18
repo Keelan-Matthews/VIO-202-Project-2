@@ -83,7 +83,7 @@ html,
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .drop-container {
@@ -266,4 +266,29 @@ html,
     margin-right: 10px;
     margin-top: 4px;
     font-size: 27px;
+}
+
+.classified-svg {
+    width: 600px;
+}
+
+.classified-container {
+    display: flex;
+}
+
+.classified-container img {
+    animation: pulse 0.9s linear infinite;
+    animation-direction: alternate;
+    cursor: pointer;
+}
+
+.classified-container p {
+    font-size: 30px;
+    letter-spacing: 0.7px;
+    margin-left: 50px;
+}
+
+.close-document {
+    cursor: pointer;
+    font-size: 18px;
 }
