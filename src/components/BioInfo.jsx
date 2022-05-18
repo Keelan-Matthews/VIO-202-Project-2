@@ -1,6 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react';
+import { useDrag, useDrop } from 'react-dnd';
 
 export default function BioInfo() {
+    const [{isDragging}, drag] = useDrag(()=> ({
+        type: "weakness",
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    }))
+
+    const [{isOver}, drop] = useDrop(()=> ({
+        accept: "weakness",
+        drop: () => dropItem(),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }))
+
+    const [dropped, setDropped] = useState(false);
+
+    const dropItem = () => {
+        const weakness = document.querySelector(".drop-container");
+
+        weakness.innerHTML = 
+        `<div class="strength">
+            <p>Pushover</p>
+        </div>`;
+
+        setDropped(true);
+    }
+
   return (
     <section className="d-flex vh-100 align-items-center">
         <div className="d-flex justify-content-end vw-100 me-5">
@@ -11,29 +40,31 @@ export default function BioInfo() {
                 <p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Age: </span>36</p>
                 <div className="mt-5">
                     <div>
-                    <h3 className="h1 fw-bold mb-4">Strengths</h3>
-                    <div className="d-flex">
-                        <div className="strength">
-                        <p>Hard Worker</p>
+                        <h3 className="h1 fw-bold mb-4">Strengths</h3>
+                        <div className="d-flex">
+                            <div className="strength">
+                                <p>Hard Worker</p>
+                            </div>
+                            <div className="strength">
+                                <p>Can use a stapler</p>
+                            </div>
+                            <div className={ dropped ? "" : "drop-container"} ref={drop} style={{ backgroundColor: isOver ? "#9ed4d2" : ""}}>
+                            </div>
                         </div>
-                        <div className="strength">
-                        <p>Can use a stapler</p>
-                        </div>
-                    </div>
                     </div>
                     <div>
-                    <h3 className="h1 fw-bold mb-4">Weaknesses</h3>
-                    <div className="d-flex">
-                        <div className="strength">
-                        <p>Terrible stamina</p>
+                        <h3 className="h1 fw-bold mb-4">Weaknesses</h3>
+                        <div className="d-flex">
+                            <div className="strength">
+                                <p>Terrible stamina</p>
+                            </div>
+                            <div className="strength">
+                                <p>No Driver's License</p>
+                            </div>
+                            <div className={dropped ? "hide" : "strength pulse"} ref={ drag } style={{ display: isDragging ? "none" : ""}}>
+                                <p>Pushover</p>
+                            </div>
                         </div>
-                        <div className="strength">
-                        <p>No Driver's License</p>
-                        </div>
-                        <div className="strength">
-                        <p>Pushover</p>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ html,
 }
 
 .strength {
-    background-color: #66A6A4;
+    background-color: #32cea6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +64,35 @@ html,
     margin: 8px;
     border-radius: 7px;
     font-size: 25px;
-    cursor: pointer;
+    cursor: grab;
+}
+
+.pulse {
+    animation: pulse 0.9s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.07);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.drop-container {
+    margin: 8px;
+    width: 250px;
+    height: 70px;
+    border-radius: 7px;
+    background-color: rgb(69, 69, 69);
+    transition: all 0.3s ease;
 }
 
 .strength p {
@@ -72,22 +100,75 @@ html,
 }
 
 .stat-line {
-    background: linear-gradient(90deg, rgba(102,166,164,1) 0%, rgb(79, 226, 155,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66a6a4",endColorstr="#51f4a5",GradientType=1);
     border-radius: 10px;
-    height: 30px;
-    animation: grow 2s ease-in-out;
+    height: 40px;
+    background: linear-gradient(-270deg, #32cea6, #32cea6, rgba(91,221,217,1), rgba(241,106,245,1), rgba(245,106,152,1));
+    background-size: 200% 200%;
+    animation: grow 1.5s ease-in-out;
 }
 
-.stat-line-2 {
-    background: rgb(91,221,217);
-    background: -moz-linear-gradient(90deg, rgba(91,221,217,1) 0%, rgba(241,106,245,1) 51%, rgba(245,106,152,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(91,221,217,1) 0%, rgba(241,106,245,1) 51%, rgba(245,106,152,1) 100%);
-    background: linear-gradient(90deg, rgba(91,221,217,1) 0%, rgba(241,106,245,1) 51%, rgba(245,106,152,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5bddd9",endColorstr="#f56a98",GradientType=1);
-    border-radius: 10px;
-    height: 30px;
-    animation: grow 1.5s ease-in-out;
+.anim-1 {
+    animation: strength-anim 2s ease;
+    animation-fill-mode: forwards;
+}
+
+.anim-2 {
+    animation: smarts-anim 2s ease;
+    animation-fill-mode: forwards;
+}
+
+.anim-3 {
+    animation: agility-anim 2s ease;
+    animation-fill-mode: forwards;
+}
+
+.anim-4 {
+    animation: pushover-anim 2s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes strength-anim {
+    0%{
+        background-position:0%;
+        width: 200px;
+    }
+    100%{
+        background-position:100%;
+        width: 400px;
+    }
+}
+
+@keyframes smarts-anim {
+    0%{
+        background-position:0%;
+        width: 500px;
+    }
+    100%{
+        background-position:100%;
+        width: 700px;
+    }
+}
+
+@keyframes agility-anim {
+    0%{
+        background-position:0%;
+        width: 340px;
+    }
+    100%{
+        background-position:100%;
+        width: 890px;
+    }
+}
+
+@keyframes pushover-anim {
+    0%{
+        background-position:0%;
+        width: 800px;
+    }
+    100%{
+        background-position:100%;
+        width: 35px;
+    }
 }
 
 .stat-line-back {
@@ -96,12 +177,13 @@ html,
     top: 0;
     width: 890px;
     border-radius: 10px;
-    height: 30px;
+    height: 40px;
     background-color: rgb(69, 69, 69);
 }
 
 .stat-group {
     position: relative;
+    text-align: right;
 }
 
 @keyframes grow {
@@ -130,4 +212,58 @@ html,
 
 .author {
     z-index: -1;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.toggle {
+	background-color: rgb(69, 69, 69);
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+	position: relative;
+	height: 40px;
+	width: 90px;
+	transform: scale(1.5);
+    margin: 20px auto;
+}
+
+.toggle .ball {
+	background-color: grey;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 35px;
+	width: 35px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .toggle .ball {
+	transform: translateX(50px);
+}
+
+
+.fa-dog {
+	color: #32cea6;
+    font-size: 20px;
+}
+
+.fa-dna {
+    color: rgba(245,106,152,1);
+    font-size: 20px;
+}
+
+.fa-stat {
+    color: white;
+    margin-right: 10px;
+    margin-top: 4px;
+    font-size: 27px;
 }
