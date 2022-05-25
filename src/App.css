@@ -5,10 +5,11 @@
 }
 
 html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 .title {
     width: 100%;
@@ -102,7 +103,7 @@ html,
 .stat-line {
     border-radius: 10px;
     height: 40px;
-    background: linear-gradient(-270deg, #32cea6, #32cea6, rgba(91,221,217,1), rgba(241,106,245,1), rgba(245,106,152,1));
+    background: linear-gradient(-270deg, #32cea6, #32cea6, rgba(91, 221, 217, 1), rgba(241, 106, 245, 1), rgba(245, 106, 152, 1));
     background-size: 200% 200%;
     animation: grow 1.5s ease-in-out;
 }
@@ -128,45 +129,49 @@ html,
 }
 
 @keyframes strength-anim {
-    0%{
-        background-position:0%;
+    0% {
+        background-position: 0%;
         width: 200px;
     }
-    100%{
-        background-position:100%;
+
+    100% {
+        background-position: 100%;
         width: 400px;
     }
 }
 
 @keyframes smarts-anim {
-    0%{
-        background-position:0%;
+    0% {
+        background-position: 0%;
         width: 500px;
     }
-    100%{
-        background-position:100%;
+
+    100% {
+        background-position: 100%;
         width: 700px;
     }
 }
 
 @keyframes agility-anim {
-    0%{
-        background-position:0%;
+    0% {
+        background-position: 0%;
         width: 340px;
     }
-    100%{
-        background-position:100%;
+
+    100% {
+        background-position: 100%;
         width: 890px;
     }
 }
 
 @keyframes pushover-anim {
-    0%{
-        background-position:0%;
+    0% {
+        background-position: 0%;
         width: 800px;
     }
-    100%{
-        background-position:100%;
+
+    100% {
+        background-position: 100%;
         width: 35px;
     }
 }
@@ -205,8 +210,8 @@ html,
 
 .redacted {
     height: 25px;
-    background-color: rgba(102,166,164,1);
-    box-shadow: 0px 0px 10px 1px rgba(81,235,230,0.87);
+    background-color: rgba(102, 166, 164, 1);
+    box-shadow: 0px 0px 10px 1px rgba(81, 235, 230, 0.87);
     display: inline-block;
 }
 
@@ -215,49 +220,49 @@ html,
 }
 
 .checkbox {
-	opacity: 0;
-	position: absolute;
+    opacity: 0;
+    position: absolute;
 }
 
 .toggle {
-	background-color: rgb(69, 69, 69);
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 15px;
-	position: relative;
-	height: 40px;
-	width: 90px;
-	transform: scale(1.5);
+    background-color: rgb(69, 69, 69);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    position: relative;
+    height: 40px;
+    width: 90px;
+    transform: scale(1.5);
     margin: 20px auto;
 }
 
 .toggle .ball {
-	background-color: grey;
-	border-radius: 50%;
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	height: 35px;
-	width: 35px;
-	transform: translateX(0px);
-	transition: transform 0.2s linear;
+    background-color: grey;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 35px;
+    width: 35px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .toggle .ball {
-	transform: translateX(50px);
+.checkbox:checked+.toggle .ball {
+    transform: translateX(50px);
 }
 
 
 .fa-dog {
-	color: #32cea6;
+    color: #32cea6;
     font-size: 20px;
 }
 
 .fa-dna {
-    color: rgba(245,106,152,1);
+    color: rgba(245, 106, 152, 1);
     font-size: 20px;
 }
 
@@ -291,4 +296,39 @@ html,
 .close-document {
     cursor: pointer;
     font-size: 18px;
+}
+
+.icon-scroll {
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
+}
+
+.icon-scroll:before {
+    position: absolute;
+    left: 49.5%;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: -4px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
 }
