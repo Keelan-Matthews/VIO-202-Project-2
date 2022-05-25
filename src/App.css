@@ -69,17 +69,17 @@ body {
 }
 
 .pulse {
-    animation: pulse 0.9s linear infinite;
+    animation: pulse 0.6s linear infinite;
     animation-direction: alternate;
 }
 
 @keyframes pulse {
     from {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     to {
-        transform: scale(1.07);
+        transform: translateY(-10px);
     }
 }
 
@@ -94,6 +94,17 @@ body {
     border-radius: 7px;
     background-color: rgb(69, 69, 69);
     transition: all 0.3s ease;
+    animation: fade 1s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes fade {
+    from {
+        background-color: rgb(69, 69, 69);
+    }
+    to {
+        background-color: rgb(127, 127, 127);
+    }
 }
 
 .strength p {
