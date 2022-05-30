@@ -5,7 +5,7 @@ export default function CharacterCard(props) {
 	return (
 		<div className="d-flex justify-content-center align-items-center info-container-character">
 			<GlitchClip duration={7000}>
-				<img src={props.image} alt="" width="800px" />
+				<img src={props.image} alt="" width="800px" height="600px" />
 			</GlitchClip>
 
 			<div className="w-50">

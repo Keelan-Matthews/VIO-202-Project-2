@@ -13,7 +13,7 @@ export default function Characters() {
 	const parent = { width: `1500px`, height: `68%` }
 
 	return (
-		<section className="d-flex flex-column vh-100 align-items-center" style={{ backgroundColor: '#354856' }}>
+		<section className="d-flex flex-column vh-100 align-items-center pt-5" style={{ backgroundColor: '#354856' }}>
 				<h1 className={ hovered ? "display-1 fw-bold text-center text-white mb-5 pb-5 glitch-effect" : "display-1 fw-bold text-center text-white mb-5 pb-5" } data-text="Characters" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Characters</h1>
 				<div style={parent} className="ms-5 ps-5">
 					<HorizontalScroll reverseScroll={true}>

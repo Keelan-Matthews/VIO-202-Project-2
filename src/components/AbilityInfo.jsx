@@ -28,9 +28,7 @@ export default function Abilities() {
 							</div>
 
 						<div className={clicked ? "evidence-animation" : "hide"}>
-							<GlitchSquiggly onHover={true}>
 								<img src={Evidence} alt="" className="evidence-svg" onClick={updateClick} />
-							</GlitchSquiggly>
 						</div>
 					</div>
 				</div>

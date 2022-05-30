@@ -667,3 +667,8 @@ body {
     }
 }
   
+#tsparticles {
+    height: 1000px;
+    width: 1900px;
+    position: absolute;
+}
