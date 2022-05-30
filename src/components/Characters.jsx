@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CharacterCard from './CharacterCard';
 import Gorilla from '../images/gorilla.svg';
 import Fly from '../images/fly.svg';
@@ -6,13 +6,15 @@ import Giraffe from '../images/giraffe.svg';
 import HorizontalScroll from 'react-scroll-horizontal';
 
 export default function Characters() {
+	const [hovered, setHovered] = useState(false);
+  	const toggleHover = () => setHovered(!hovered);
 
 	const child = { width: `78em`, height: `100%` }
 	const parent = { width: `1500px`, height: `68%` }
 
 	return (
 		<section className="d-flex flex-column vh-100 align-items-center" style={{ backgroundColor: '#354856' }}>
-				<h1 className="display-1 fw-bold text-center text-white mb-5 pb-5">Characters</h1>
+				<h1 className={ hovered ? "display-1 fw-bold text-center text-white mb-5 pb-5 glitch-effect" : "display-1 fw-bold text-center text-white mb-5 pb-5" } data-text="Characters" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Characters</h1>
 				<div style={parent} className="ms-5 ps-5">
 					<HorizontalScroll reverseScroll={true}>
 						<div style={child}>

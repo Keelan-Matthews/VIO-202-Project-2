@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { useDrag, useDrop } from 'react-dnd';
+import GlitchSquiggly from 'react-glitch-effect/core/GlitchSquiggly';
+import GlitchText from 'react-glitch-effect/core/GlitchText';
 
 export default function BioInfo() {
     const [{isDragging}, drag] = useDrag(()=> ({
@@ -18,6 +20,8 @@ export default function BioInfo() {
     }))
 
     const [dropped, setDropped] = useState(false);
+    const [hovered, setHovered] = useState(false);
+    const toggleHover = () => setHovered(!hovered);
 
     const dropItem = () => {
         const weakness = document.querySelector(".drop-container");
@@ -34,7 +38,7 @@ export default function BioInfo() {
     <section className="d-flex vh-100 align-items-center">
         <div className="d-flex justify-content-end vw-100 me-5">
             <div className="me-5 info-container">
-                <h1 className="display-1 fw-bold mb-5 pb-2 text-center">Biography</h1>
+                <h1 className={hovered ? "display-1 fw-bold mb-5 pb-2 text-center glitch-effect" : "display-1 fw-bold mb-5 pb-2 text-center"} data-text="Biography" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Biography</h1>
                 <p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Name: </span>Bao James Holmes</p>
                 <p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Occupation: </span>Salaryman</p>
                 <p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Age: </span>36</p>
@@ -61,9 +65,13 @@ export default function BioInfo() {
                             <div className="strength">
                                 <p>No Driver's License</p>
                             </div>
-                            <div className={dropped ? "hide" : "strength pulse"} ref={ drag } style={{ display: isDragging ? "none" : ""}}>
-                                <p>Pushover</p>
-                            </div>
+                            <GlitchSquiggly onHover={true}>
+                                <div className={dropped ? "hide" : "strength pulse"} ref={ drag } style={{ display: isDragging ? "none" : ""}}>
+                                    <GlitchText onHover={true} component='p'>
+                                        Pushover
+                                    </GlitchText>
+                                </div>
+                            </GlitchSquiggly> 
                         </div>
                     </div>
                 </div>

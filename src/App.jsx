@@ -35,7 +35,9 @@ function App() {
 
   return (
     <main>
-      <img src={Background} className="background-2" alt="" style={{transform: `scale(${scale}) translateX(${translateX}) translateY(${translateY})`, transition: "transform 1s ease"}}/>
+      <div className="background-container">
+        <img src={Background} className="background-2" alt="" style={{transform: `scale(${scale}) translateX(${translateX}) translateY(${translateY})`, transition: "transform 1s ease"}}/>
+      </div>
       <Navbar/>
       <Title/>
       <Bio/>
