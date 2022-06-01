@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Worldsvg from '../images/world.svg';
+import React, { Suspense } from 'react';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { Canvas } from "@react-three/fiber";
+import WorldObj from "./WorldObj";
+import { OrbitControls } from '@react-three/drei';
+import Location from '../images/location.svg';
 
 export default function World() {
-	const [hovered, setHovered] = useState(false);
-	const toggleHover = () => setHovered(!hovered);
-
 	const particlesInit = async (main) => {
 		console.log(main);
 
@@ -19,7 +19,7 @@ export default function World() {
 	const particlesLoaded = (container) => {
 		console.log(container);
 	};
-
+	
 	return (
 		<section className="d-flex vh-100 align-items-center mt-5 position-relative" style={{ backgroundColor: '#172026' }}>
 			<Particles
@@ -82,14 +82,24 @@ export default function World() {
 			/>
 			<div className="d-flex justify-content-start vw-100 ms-5">
 				<div className="info-container me-5">
-					<h1 className={hovered ? "display-1 fw-bold mb-5 text-center glitch-effect" : "display-1 fw-bold mb-5 text-center"} data-text="World" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>World</h1>
+					<h1 className="display-1 fw-bold mb-5 text-center">World</h1>
 					<p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Planet: </span>Pawluto</p>
 					<p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Species: </span>Anthropods</p>
-					<p className="h1 fw-normal mb-4"><span className="display-5 fw-bold">Economy: </span>Crumbling</p>
+					<p className="h1 fw-normal mb-4 pb-5"><span className="display-5 fw-bold">Economy: </span>Crumbling</p>
+					<p className="h3 fw-normal mt-4">Can you find Anima Bank on the globe?</p>
+					<div>
+						<img src={Location} alt="" width="100px" />
+					</div>
 				</div>
-				<div className="scroll-image ms-5 ps-5">
-					<img src={Worldsvg} alt="" width="500px" />
-				</div>
+
+				<Canvas className="canvas">
+					<OrbitControls enableZoom={false} />
+					<ambientLight intensity={0.3} />
+					<directionalLight position={[2, 5, -2]} intensity={0.3} />
+					<Suspense fallback={null}>
+						<WorldObj/>
+					</Suspense>
+				</Canvas>
 			</div>
 		</section>
 	)

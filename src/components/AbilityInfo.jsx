@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Classified from '../images/classified.svg';
 import Evidence from '../images/evidence.svg';
-import GlitchSquiggly from 'react-glitch-effect/core/GlitchSquiggly';
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 
 export default function Abilities() {

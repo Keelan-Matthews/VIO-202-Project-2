@@ -7,6 +7,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@react-spring/parallax": "^9.4.5",
+    "@react-three/drei": "^9.11.3",
+    "@react-three/fiber": "^8.0.20",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,6 +26,7 @@
     "react-scroll-motion": "^0.2.6",
     "react-spline": "^1.2.1",
     "react-tsparticles": "^2.0.6",
+    "three": "^0.141.0",
     "tsparticles": "^2.0.6",
     "web-vitals": "^2.1.4"
   },

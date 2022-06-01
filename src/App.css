@@ -672,3 +672,7 @@ body {
     width: 1900px;
     position: absolute;
 }
+
+.canvas {
+    height: 500px !important;
+}
