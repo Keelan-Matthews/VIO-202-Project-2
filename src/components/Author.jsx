@@ -7,6 +7,10 @@ import Sushi from '../images/sushi.svg';
 import Noodles from '../images/ramen.svg';
 import Coding from '../images/coding.svg';
 import Music from '../images/music.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 export default function Author() {
 	const [hovered, setHovered] = useState(false);
@@ -36,6 +40,17 @@ export default function Author() {
 				</div>
 				<div className="author">
 					<img src={Portrait} alt="" width="400px" />
+					<div className="d-flex">
+						<a href="https://www.instagram.com/keelanriel" target="_blank">
+							<FontAwesomeIcon icon={faInstagram} className="text-white display-5 me-3" />
+						</a>
+						<a href="https://github.com/Keelan-Matthews" target="_blank">
+							<FontAwesomeIcon icon={faGithub} className="text-white display-5 me-3" />
+						</a>
+						<a href="https://open.spotify.com/artist/3JrDAXAf5v5QYQQxXHDf17?si=qfDUYZmrQaWfUmyHYxYjsQ" target="_blank">
+							<FontAwesomeIcon icon={faSpotify} className="text-white display-5 me-3" />
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
