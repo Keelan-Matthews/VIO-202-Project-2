@@ -36,11 +36,20 @@ export default function World() {
 								mode: "push",
 							},
 							resize: true,
+							onHover: {
+								enable: true,
+								mode: "bubble"
+							}
 						},
 						modes: {
 							push: {
 								quantity: 4,
 							},
+							bubble: {
+								distance: 150,
+								size: 10,
+								duration: 0.4
+							}
 						},
 					},
 					particles: {
@@ -57,7 +66,7 @@ export default function World() {
 								default: "bounce",
 							},
 							random: true,
-							speed: 0.2,
+							speed: 0.4,
 							straight: false,
 						},
 						number: {
