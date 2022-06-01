@@ -136,6 +136,16 @@ body {
     z-index: 2;
 }
 
+.socials {
+    background-color: rgb(37, 37, 37);
+    border: 7px solid rgb(69, 69, 69);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    justify-content: space-around;
+    transform: translate(130px, -40px);
+}
+
 .info-container-2 {
     background-color: rgb(37, 37, 37);
     border: 7px solid rgb(69, 69, 69);
@@ -144,6 +154,7 @@ body {
     width: 800px;
     color: white;
     z-index: 2;
+    max-height: 800px;
 }
 
 .info-container-character {
@@ -350,6 +361,9 @@ body {
 
 .author {
     z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .checkbox {
