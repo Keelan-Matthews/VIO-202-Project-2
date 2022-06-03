@@ -27,7 +27,7 @@ export default function BioInfo() {
         const weakness = document.querySelector(".drop-container");
 
         weakness.innerHTML = 
-        `<div class="strength">
+        `<div class="strength change-color">
             <p>Pushover</p>
         </div>`;
 

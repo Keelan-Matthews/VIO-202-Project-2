@@ -27,28 +27,28 @@ export default function Author() {
 					<p className="h1 fw-bold mb-3">Favorite Foods</p>
 
 					<div className="d-flex">
-						<Item image={Pizza} />
-						<Item image={Sushi} />
-						<Item image={Noodles} />
+						<Item image={Pizza} title="Pizza" />
+						<Item image={Sushi} title="Sushi" />
+						<Item image={Noodles} title="Noodles" />
 					</div>
 					<p className="h1 fw-bold mb-3 mt-3">Hobbies</p>
 					<div className="d-flex">
-						<Item image={Music} />
-						<Item image={Coding} />
+						<Item image={Music} title="Music" />
+						<Item image={Coding} title="Coding" />
 					</div>
 
 				</div>
-				<div className="author">
-					<img src={Portrait} alt="" width="600px" className="ms-5" />
+				<div className="d-flex flex-column align-items-center">
+					<img src={Portrait} alt="" width="600px" className="ms-5 author" />
 					<div className="d-flex socials">
-						<a href="https://www.instagram.com/keelanriel" target="_blank">
-							<FontAwesomeIcon icon={faInstagram} className="text-white display-5 me-3" />
+						<a href="https://www.instagram.com/keelanriel" target="_blank" rel="noreferrer">
+							<FontAwesomeIcon icon={faInstagram} className="icon display-5 me-3" />
 						</a>
-						<a href="https://github.com/Keelan-Matthews" target="_blank">
-							<FontAwesomeIcon icon={faGithub} className="text-white display-5 me-3" />
+						<a href="https://github.com/Keelan-Matthews" target="_blank" rel="noreferrer">
+							<FontAwesomeIcon icon={faGithub} className="icon display-5 me-3" />
 						</a>
-						<a href="https://open.spotify.com/artist/3JrDAXAf5v5QYQQxXHDf17?si=qfDUYZmrQaWfUmyHYxYjsQ" target="_blank">
-							<FontAwesomeIcon icon={faSpotify} className="text-white display-5 me-3" />
+						<a href="https://open.spotify.com/artist/3JrDAXAf5v5QYQQxXHDf17?si=qfDUYZmrQaWfUmyHYxYjsQ" target="_blank" rel="noreferrer">
+							<FontAwesomeIcon icon={faSpotify} className="icon display-5 me-3" />
 						</a>
 					</div>
 				</div>
